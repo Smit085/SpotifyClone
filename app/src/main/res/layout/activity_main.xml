@@ -1,92 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:id="@+id/srcl_frag"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintVertical_weight="1"
+    <FrameLayout
+        android:id="@+id/frag_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/lin_nav">
-
-        <FrameLayout
-            android:id="@+id/frag_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </ScrollView>
+        app:layout_constraintBottom_toTopOf="@id/nav_bottom"/>
 
     <LinearLayout
-        android:id="@+id/lin_nav"
+        android:id="@+id/nav_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_weight="1"
-        app:layout_constraintTop_toBottomOf="@+id/srcl_frag"
+        android:orientation="horizontal"
+        android:background="@color/transparent"
+        android:paddingTop="10dp"
+        android:alpha="0.8"
+        app:layout_constraintTop_toBottomOf="@+id/frag_container"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
             app:icon="@drawable/icon_home"
-            android:background="@android:color/transparent"
-            android:text="Home"
-            android:textSize="12sp"
             app:iconGravity="top"
             app:iconSize="24dp"
-            app:cornerRadius="0dp"
+            app:iconPadding="3dp"
+            app:iconTint="@null"
+            android:textColor="@color/white_inactive"
+            android:text="Home"
+            android:textSize="11sp"
+            android:padding="0dp"
             android:layout_weight="1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_search"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
             app:icon="@drawable/icon_search"
-            android:background="@android:color/transparent"
-            android:text="Search"
-            android:textSize="12sp"
             app:iconGravity="top"
             app:iconSize="24dp"
-            app:cornerRadius="0dp"
+            app:iconPadding="3dp"
+            app:iconTint="@null"
+            android:textColor="@color/white_inactive"
+            android:text="Search"
+            android:textSize="11sp"
+            android:padding="0dp"
             android:layout_weight="1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_library"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
             app:icon="@drawable/icon_library"
-            android:background="@android:color/transparent"
-            android:text="Your Library"
-            android:textSize="12sp"
             app:iconGravity="top"
             app:iconSize="24dp"
-            app:cornerRadius="0dp"
+            app:iconPadding="3dp"
+            app:iconTint="@null"
+            android:textColor="@color/white_inactive"
+            android:text="Library"
+            android:textSize="11sp"
+            android:padding="0dp"
             android:layout_weight="1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_premium"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
             app:icon="@drawable/icon_premium"
-            android:background="@android:color/transparent"
-            android:text="Premium"
-            android:textSize="12sp"
             app:iconGravity="top"
             app:iconSize="24dp"
-            app:cornerRadius="0dp"
-            android:layout_weight="1"/>
+            app:iconPadding="3dp"
+            app:iconTint="@null"
+            android:textColor="@color/white_inactive"
+            android:text="Premium"
+            android:textSize="11sp"
+            android:padding="0dp"
+            android:layout_weight="1" />
 
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
