@@ -30,16 +30,19 @@ class MainActivity : AppCompatActivity() {
         binding.btnSearch.setOnClickListener{
             loadFragment(SearchFragment())
             change_btnState(binding.btnSearch,R.drawable.icon_search_filled)
+            binding.btnSearch.startAnimation(scaleAnimation)
         }
 
         binding.btnLibrary.setOnClickListener(){
             loadFragment(LibraryFragment())
             change_btnState(binding.btnLibrary,R.drawable.icon_library_filled)
+            binding.btnLibrary.startAnimation(scaleAnimation)
         }
 
         binding.btnPremium.setOnClickListener{
             loadFragment(PremiumFragment())
             change_btnState(binding.btnPremium,R.drawable.icon_premium_filled)
+            binding.btnPremium.startAnimation(scaleAnimation)
         }
 
     }
@@ -67,5 +70,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnSearch.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
         binding.btnLibrary.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
         binding.btnPremium.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
+
+        binding.btnHome.clearAnimation()
+        binding.btnSearch.clearAnimation()
+        binding.btnLibrary.clearAnimation()
+        binding.btnPremium.clearAnimation()
     }
 }
