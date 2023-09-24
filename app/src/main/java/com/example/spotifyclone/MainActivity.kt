@@ -1,8 +1,8 @@
 package com.example.spotifyclone
 
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
@@ -14,16 +14,17 @@ import com.google.android.material.button.MaterialButton
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         loadFragment(HomeFragment())
-
+        val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
         binding.btnHome.setOnClickListener {
             loadFragment(HomeFragment())
             change_btnState(binding.btnHome,R.drawable.icon_home_filled)
+            binding.btnHome.startAnimation(scaleAnimation)
         }
 
         binding.btnSearch.setOnClickListener{
@@ -51,12 +52,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun change_btnState(btn: MaterialButton,icon: Int){
+        reset_btnState()
         btn.icon =  ContextCompat.getDrawable(this,icon)
         btn.setTextColor(ContextCompat.getColorStateList(this, R.color.white))
     }
-//    private fun change_btnState(btn: MaterialButton) {
-//        val color = ContextCompat.getColor(this, R.color.white) // Replace with your desired color resource
-//        btn.iconTint = ColorStateList.valueOf(color)
-//        btn.setTextColor(ColorStateList.valueOf(color))
-//    }
+
+    private fun reset_btnState(){
+        binding.btnHome.icon = ContextCompat.getDrawable(this,R.drawable.icon_home)
+        binding.btnSearch.icon = ContextCompat.getDrawable(this,R.drawable.icon_search)
+        binding.btnLibrary.icon = ContextCompat.getDrawable(this,R.drawable.icon_library)
+        binding.btnPremium.icon = ContextCompat.getDrawable(this,R.drawable.icon_premium)
+
+        binding.btnHome.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
+        binding.btnSearch.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
+        binding.btnLibrary.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
+        binding.btnPremium.setTextColor(ContextCompat.getColorStateList(this, R.color.white_inactive))
+    }
 }
