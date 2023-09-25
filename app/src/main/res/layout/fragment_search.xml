@@ -50,6 +50,7 @@
             app:iconifiedByDefault="false"
             app:queryHint="What do you want to listen?"
             android:theme="@style/AppSearchView"/>
+
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
