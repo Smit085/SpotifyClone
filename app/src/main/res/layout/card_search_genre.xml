@@ -7,7 +7,10 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:cardCornerRadius="5dp"
-    android:layout_margin="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginBottom="2dp"
     app:cardElevation="4dp"
     android:backgroundTint="#7358FF">
 
@@ -20,17 +23,17 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:gravity="start"
-            android:text="Live Events near you"/>
+            android:text="Live Events\nnear you"/>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:backgroundTint="@color/transparent"
-            android:alpha="0.9"
-            android:translationY="40dp"
-            android:translationX="0dp"
+            android:rotation="25"
+            android:translationY="30dp"
+            android:translationX="15dp"
             android:layout_gravity="end"
-            android:elevation="50dp"
+            app:cardElevation="24dp"
             app:cardCornerRadius="5dp">
 
 

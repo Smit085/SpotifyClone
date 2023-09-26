@@ -2,6 +2,7 @@ package com.example.spotifyclone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        loadFragment(HomeFragment(),1)
+        loadFragment(HomeFragment(),0)
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
 
         binding.btnHome.setOnClickListener {
@@ -30,19 +31,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnSearch.setOnClickListener{
-            loadFragment(SearchFragment(),0)
+            loadFragment(SearchFragment(),1)
             change_btnState(binding.btnSearch,R.drawable.icon_search_filled)
             binding.btnSearch.startAnimation(scaleAnimation)
         }
 
         binding.btnLibrary.setOnClickListener(){
-            loadFragment(LibraryFragment(),0)
+            loadFragment(LibraryFragment(),1)
             change_btnState(binding.btnLibrary,R.drawable.icon_library_filled)
             binding.btnLibrary.startAnimation(scaleAnimation)
         }
 
         binding.btnPremium.setOnClickListener{
-            loadFragment(PremiumFragment(),0)
+            loadFragment(PremiumFragment(),1)
             change_btnState(binding.btnPremium,R.drawable.icon_premium_filled)
             binding.btnPremium.startAnimation(scaleAnimation)
         }
@@ -56,10 +57,30 @@ class MainActivity : AppCompatActivity() {
             ft.add(R.id.frag_container, fragment);
             fm.popBackStack("root_fragment", FragmentManager.POP_BACK_STACK_INCLUSIVE);
             ft.addToBackStack("root_fragment");
+
         } else {
             ft.replace(R.id.frag_container, fragment);
+            ft.addToBackStack(null);
+
+            val currentFragment  = supportFragmentManager.findFragmentById(R.id.frag_container)
+            val fragmentName = currentFragment?.javaClass?.simpleName
+            Log.i("FrameNO= ", fragmentName.toString())
+
+            when (fragmentName) {
+                "HomeFragment" -> {
+                    change_btnState(binding.btnHome, R.drawable.icon_home_filled)
+                }
+                "SearchFragment" -> {
+                    change_btnState(binding.btnSearch, R.drawable.icon_search_filled)
+                }
+                "LibraryFragment" -> {
+                    change_btnState(binding.btnLibrary, R.drawable.icon_library_filled)
+                }
+                "PremiumFragment" -> {
+                    change_btnState(binding.btnPremium, R.drawable.icon_premium_filled)
+                }
+            }
         }
-        ft.addToBackStack(null);
         ft.commit()
     }
 
@@ -67,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         reset_btnState()
         btn.icon =  ContextCompat.getDrawable(this,icon)
         btn.setTextColor(ContextCompat.getColorStateList(this, R.color.white))
+
     }
 
     private fun reset_btnState(){

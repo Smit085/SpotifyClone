@@ -22,6 +22,7 @@
             android:textSize="28dp"
             android:textStyle="bold"
             android:textColor="@color/white"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -32,16 +33,20 @@
             android:background="@color/transparent"
             android:src="@drawable/outline_photo_camera_24"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="5dp"
             app:layout_constraintBottom_toBottomOf="@id/txt_search"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardV_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/txt_search"
-            app:layout_constraintTop_toBottomOf="@id/txt_search"
+            app:cardCornerRadius="5dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="5dp">
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_search">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
@@ -58,9 +63,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Browse all"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardV_search"/>
 
@@ -68,6 +75,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             app:layout_constraintTop_toBottomOf="@id/txt_browse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
