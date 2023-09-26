@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.spotifyclone.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
@@ -32,7 +32,7 @@ class SearchFragment : Fragment() {
         val adapter = RecyclerCategoryAdapter(requireContext(), arrCatg)
         binding.recyclerView.adapter = adapter
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
         binding.recyclerView.adapter = adapter
 
 

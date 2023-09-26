@@ -13,44 +13,53 @@ import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, true)
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        loadFragment(HomeFragment())
+        loadFragment(HomeFragment(),1)
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
+
         binding.btnHome.setOnClickListener {
-            loadFragment(HomeFragment())
+            loadFragment(HomeFragment(),0)
             change_btnState(binding.btnHome,R.drawable.icon_home_filled)
             binding.btnHome.startAnimation(scaleAnimation)
         }
 
         binding.btnSearch.setOnClickListener{
-            loadFragment(SearchFragment())
+            loadFragment(SearchFragment(),0)
             change_btnState(binding.btnSearch,R.drawable.icon_search_filled)
             binding.btnSearch.startAnimation(scaleAnimation)
         }
 
         binding.btnLibrary.setOnClickListener(){
-            loadFragment(LibraryFragment())
+            loadFragment(LibraryFragment(),0)
             change_btnState(binding.btnLibrary,R.drawable.icon_library_filled)
             binding.btnLibrary.startAnimation(scaleAnimation)
         }
 
         binding.btnPremium.setOnClickListener{
-            loadFragment(PremiumFragment())
+            loadFragment(PremiumFragment(),0)
             change_btnState(binding.btnPremium,R.drawable.icon_premium_filled)
             binding.btnPremium.startAnimation(scaleAnimation)
         }
 
     }
 
-    private fun loadFragment(fragment: Fragment){
+    private fun loadFragment(fragment: Fragment,flag: Int){
         val fm: FragmentManager = supportFragmentManager;
         val ft:FragmentTransaction = fm.beginTransaction()
-        ft.replace(R.id.frag_container,fragment)
+        if (flag == 0) {
+            ft.add(R.id.frag_container, fragment);
+            fm.popBackStack("root_fragment", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            ft.addToBackStack("root_fragment");
+        } else {
+            ft.replace(R.id.frag_container, fragment);
+        }
+        ft.addToBackStack(null);
         ft.commit()
     }
 

@@ -12,15 +12,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="25dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/txt_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:textSize="60sp"
+            android:textSize="28dp"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +40,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/txt_search"
             app:layout_constraintTop_toBottomOf="@id/txt_search"
+            android:layout_marginTop="10dp"
             app:cardCornerRadius="5dp">
 
         <androidx.appcompat.widget.SearchView
@@ -49,16 +49,28 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             app:iconifiedByDefault="false"
-            app:queryHint="What do you want to listen?"
+            app:queryHint="What do you want to listen to?"
             android:theme="@style/AppSearchView"/>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_browse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse all"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardV_search"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/cardV_search"
+            app:layout_constraintTop_toBottomOf="@id/txt_browse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
