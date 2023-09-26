@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.spotifyclone.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButton
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedListener {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         loadFragment(HomeFragment(),0)
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
+        supportFragmentManager.addOnBackStackChangedListener(this)
 
         binding.btnHome.setOnClickListener {
             loadFragment(HomeFragment(),0)
@@ -49,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     private fun loadFragment(fragment: Fragment,flag: Int){
         val fm: FragmentManager = supportFragmentManager;
         val ft:FragmentTransaction = fm.beginTransaction()
@@ -57,29 +57,9 @@ class MainActivity : AppCompatActivity() {
             ft.add(R.id.frag_container, fragment);
             fm.popBackStack("root_fragment", FragmentManager.POP_BACK_STACK_INCLUSIVE);
             ft.addToBackStack("root_fragment");
-
         } else {
             ft.replace(R.id.frag_container, fragment);
             ft.addToBackStack(null);
-
-            val currentFragment  = supportFragmentManager.findFragmentById(R.id.frag_container)
-            val fragmentName = currentFragment?.javaClass?.simpleName
-            Log.i("FrameNO= ", fragmentName.toString())
-
-            when (fragmentName) {
-                "HomeFragment" -> {
-                    change_btnState(binding.btnHome, R.drawable.icon_home_filled)
-                }
-                "SearchFragment" -> {
-                    change_btnState(binding.btnSearch, R.drawable.icon_search_filled)
-                }
-                "LibraryFragment" -> {
-                    change_btnState(binding.btnLibrary, R.drawable.icon_library_filled)
-                }
-                "PremiumFragment" -> {
-                    change_btnState(binding.btnPremium, R.drawable.icon_premium_filled)
-                }
-            }
         }
         ft.commit()
     }
@@ -106,5 +86,26 @@ class MainActivity : AppCompatActivity() {
         binding.btnSearch.clearAnimation()
         binding.btnLibrary.clearAnimation()
         binding.btnPremium.clearAnimation()
+    }
+
+    override fun onBackStackChanged() {
+        val currentFragment  = supportFragmentManager.findFragmentById(R.id.frag_container)
+        val fragmentName = currentFragment?.javaClass?.simpleName
+        Log.i("FrameNO= ", fragmentName.toString())
+
+        when (fragmentName) {
+            "HomeFragment" -> {
+                change_btnState(binding.btnHome, R.drawable.icon_home_filled)
+            }
+            "SearchFragment" -> {
+                change_btnState(binding.btnSearch, R.drawable.icon_search_filled)
+            }
+            "LibraryFragment" -> {
+                change_btnState(binding.btnLibrary, R.drawable.icon_library_filled)
+            }
+            "PremiumFragment" -> {
+                change_btnState(binding.btnPremium, R.drawable.icon_premium_filled)
+            }
+        }
     }
 }
