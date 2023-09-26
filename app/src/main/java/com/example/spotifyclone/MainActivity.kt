@@ -2,7 +2,6 @@ package com.example.spotifyclone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
@@ -90,10 +89,8 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
 
     override fun onBackStackChanged() {
         val currentFragment  = supportFragmentManager.findFragmentById(R.id.frag_container)
-        val fragmentName = currentFragment?.javaClass?.simpleName
-        Log.i("FrameNO= ", fragmentName.toString())
 
-        when (fragmentName) {
+        when (currentFragment?.javaClass?.simpleName) {
             "HomeFragment" -> {
                 change_btnState(binding.btnHome, R.drawable.icon_home_filled)
             }
@@ -108,4 +105,5 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
             }
         }
     }
+
 }
