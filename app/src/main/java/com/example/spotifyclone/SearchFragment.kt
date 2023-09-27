@@ -25,37 +25,39 @@ class SearchFragment : Fragment() {
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
 
 
         val adapter = RecyclerCategoryAdapter(requireContext(), arrCatg)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView1.adapter = adapter
 
-        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView1.adapter = adapter
 
+        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView2.adapter = adapter
 
         return binding.root
     }

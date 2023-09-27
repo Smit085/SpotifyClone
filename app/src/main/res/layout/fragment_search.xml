@@ -7,6 +7,14 @@
     android:background="@color/black"
     tools:context=".SearchFragment">
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:animateLayoutChanges="true"
+        android:isScrollContainer="true"
+        >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,10 +67,10 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txt_browse"
+            android:id="@+id/txt_startbrowsing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Browse all"
+            android:text="Start browsing"
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -72,13 +80,37 @@
             app:layout_constraintTop_toBottomOf="@id/cardV_search"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/txt_browse"
+            app:layout_constraintTop_toBottomOf="@id/txt_startbrowsing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_browseall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse all"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView1"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_browseall"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </FrameLayout>
