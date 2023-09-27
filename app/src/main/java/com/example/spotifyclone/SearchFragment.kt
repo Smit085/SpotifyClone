@@ -16,7 +16,6 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(inflater, container, false)
 
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
@@ -25,39 +24,45 @@ class SearchFragment : Fragment() {
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-//        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
 
 
-        val adapter = RecyclerCategoryAdapter(requireContext(), arrCatg)
-        binding.recyclerView1.adapter = adapter
+        val arrayList1 = ArrayList(arrCatg.subList(0, 3))
+        val arrayList2 = ArrayList(arrCatg.subList(3, arrCatg.size))
+
+        val adapter1 = RecyclerCategoryAdapter(requireContext(), arrayList1)
+//        binding.recyclerView1.adapter = adapter1
+
+        val adapter2 = RecyclerCategoryAdapter(requireContext(), arrayList2)
+//        binding.recyclerView1.adapter = adapter2
 
         binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerView1.adapter = adapter
+        binding.recyclerView1.adapter = adapter1
 
         binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerView2.adapter = adapter
+        binding.recyclerView2.adapter = adapter2
 
         return binding.root
     }

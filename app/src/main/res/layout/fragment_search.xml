@@ -8,12 +8,11 @@
     tools:context=".SearchFragment">
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         android:animateLayoutChanges="true"
-        android:isScrollContainer="true"
-        >
+        android:isScrollContainer="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:textSize="28dp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginStart="5dp"
@@ -71,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start browsing"
-            android:textSize="18dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
@@ -84,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/txt_startbrowsing"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -93,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Browse all"
-            android:textSize="18dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
@@ -106,9 +106,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/txt_browseall"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="50dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
