@@ -110,9 +110,7 @@
             app:layout_constraintTop_toBottomOf="@id/txt_browseall"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:requiresFadingEdge="vertical"
-            android:fadingEdge="vertical"
-            android:fadingEdgeLength="50dp"/>
+            android:paddingBottom="80dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
