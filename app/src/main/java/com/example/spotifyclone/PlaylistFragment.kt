@@ -49,13 +49,20 @@ class PlaylistFragment : Fragment() {
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
 
 
-        val arrayList = ArrayList(arrCatg.subList(3, arrCatg.size))
+        val arrayList1 = ArrayList(arrCatg.subList(0, 3))
+        val arrayList2 = ArrayList(arrCatg.subList(3, arrCatg.size))
 
-        val adapter = RecyclerCategoryAdapter(requireContext(), arrayList)
+        val adapter1 = RecyclerCategoryAdapter(requireContext(), arrayList1)
+//        binding.recyclerView1.adapter = adapter1
 
+        val adapter2 = RecyclerCategoryAdapter(requireContext(), arrayList2)
+//        binding.recyclerView1.adapter = adapter2
 
-        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView1.adapter = adapter1
+
+        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView2.adapter = adapter2
 
         return binding.root
     }
