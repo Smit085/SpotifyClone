@@ -58,11 +58,11 @@ class SearchFragment : Fragment() {
         val adapter2 = RecyclerCategoryAdapter(requireContext(), arrayList2)
 //        binding.recyclerView1.adapter = adapter2
 
-        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerView1.adapter = adapter1
-
-        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerView2.adapter = adapter2
+//        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(),2)
+//        binding.recyclerView1.adapter = adapter1
+//
+//        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
+//        binding.recyclerView2.adapter = adapter2
 
         return binding.root
     }
