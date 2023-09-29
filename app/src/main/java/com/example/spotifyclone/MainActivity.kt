@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         supportFragmentManager.addOnBackStackChangedListener(this)
 
         binding.btnHome.setOnClickListener {
-            loadFragment(SearchFragment(),0)
+            loadFragment(HomeFragment(),0)
             change_btnState(binding.btnHome,R.drawable.icon_home_filled)
             binding.btnHome.startAnimation(scaleAnimation)
         }
 
         binding.btnSearch.setOnClickListener{
-            loadFragment(PlaylistFragment(),1)
+            loadFragment(SearchFragment(),1)
             change_btnState(binding.btnSearch,R.drawable.icon_search_filled)
             binding.btnSearch.startAnimation(scaleAnimation)
         }
