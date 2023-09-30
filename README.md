@@ -6,4 +6,5 @@
   -> Done.
 30/09
   Working with the search fragment
-  -> Trying to make new searchbar Fragment for search fragment.
+  -> Created new searchbar Fragment for search fragment.
+  -> Trying to make the searhcbar only clickable in search fragment
