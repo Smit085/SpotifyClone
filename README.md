@@ -8,3 +8,6 @@
   Working with the search fragment
   -> Created new searchbar Fragment for search fragment.
   -> Trying to make the searhcbar only clickable in search fragment
+  Working with premium fragment
+  -> Started creating the UI
+  -> Completed Scrolling effect
