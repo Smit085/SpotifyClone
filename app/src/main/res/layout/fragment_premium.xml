@@ -82,22 +82,23 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient_black"
             android:paddingBottom="80dp">
 
             <LinearLayout
                 android:id="@+id/lin"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp"
-                android:background="#54000000"
+                android:background="@drawable/gradient_black"
                 android:fadingEdge="vertical"
                 android:fadingEdgeLength="200dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FREE TRIAL"
                     android:textSize="14sp"
