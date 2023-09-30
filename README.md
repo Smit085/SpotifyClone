@@ -10,3 +10,4 @@
   -> Trying to make the searhcbar only clickable in search fragment
   Working with premium fragment
   -> Started creating the UI
+  -> Completed Scrolling effect
