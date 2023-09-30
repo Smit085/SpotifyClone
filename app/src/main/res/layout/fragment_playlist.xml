@@ -50,27 +50,39 @@
                     android:layout_marginEnd="5dp"
                     app:layout_constraintBottom_toBottomOf="@id/txt_search"/>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardV_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_search">
-
-                    <androidx.appcompat.widget.SearchView
-                        android:id="@+id/searchView"
+                    <com.google.android.material.button.MaterialButton
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        app:iconifiedByDefault="false"
-                        app:queryHint="What do you want to listen to?"
-                        android:theme="@style/AppSearchView"/>
-                </androidx.cardview.widget.CardView>
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"
+                        app:icon="@drawable/icon_search"
+                        app:iconTint="@color/black"
+                        app:iconPadding="10dp"
+                        android:textSize="18sp"
+                        android:padding="12dp"
+                        android:hint="What do you want to listen to?"
+                        android:textStyle="bold"
+                        android:textColorHint="@color/white_inactive"
+                        android:gravity="center_vertical"
+                        app:cornerRadius="5dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_search"
+                        />
+
+<!--                    <androidx.appcompat.widget.SearchView-->
+<!--                        android:id="@+id/searchView"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@color/white"-->
+<!--                        app:iconifiedByDefault="false"-->
+<!--                        app:queryHint="What do you want to  to?"-->
+<!--                        android:theme="@style/AppSearchView"-->
+<!--                        app:queryBackground="@null"-->
+<!--                        />-->
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.Toolbar

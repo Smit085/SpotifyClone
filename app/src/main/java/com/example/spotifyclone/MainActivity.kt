@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        loadFragment(SearchbarFragment(),0)
+        loadFragment(PlaylistFragment(),0)
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
         supportFragmentManager.addOnBackStackChangedListener(this)
 
         binding.btnHome.setOnClickListener {
-            loadFragment(SearchbarFragment(),0)
+            loadFragment(PlaylistFragment(),0)
             change_btnState(binding.btnHome,R.drawable.icon_home_filled)
             binding.btnHome.startAnimation(scaleAnimation)
         }
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         }
 
         binding.btnLibrary.setOnClickListener(){
-            loadFragment(LibraryFragment(),1)
+            loadFragment(SearchbarFragment(),1)
             change_btnState(binding.btnLibrary,R.drawable.icon_library_filled)
             binding.btnLibrary.startAnimation(scaleAnimation)
         }
