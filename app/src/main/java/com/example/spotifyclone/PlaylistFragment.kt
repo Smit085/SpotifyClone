@@ -6,12 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.Animation.RELATIVE_TO_SELF
-import android.view.animation.ScaleAnimation
-import android.widget.ImageView
 import androidx.annotation.RequiresApi
-import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.spotifyclone.databinding.FragmentPlaylistBinding
@@ -20,8 +15,6 @@ import com.example.spotifyclone.databinding.FragmentPlaylistBinding
 class PlaylistFragment : Fragment() {
     private lateinit var binding: FragmentPlaylistBinding
     var arrCatg = ArrayList<CategoryCardModel>()
-    private var lastScrollY = 0
-    private var scaleFactor = 1.0f
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -84,30 +77,71 @@ class PlaylistFragment : Fragment() {
         binding.recyclerView2.adapter = adapter2
 
 
-        binding.nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-            val deltaY = scrollY - lastScrollY
+        var isCollapsed = false
+        var scaleFactor = 1.0f // Initialize the scale factor
+        var lastVerticalOffset = 0
 
-            // Increase the scale factor with each scroll position change
-            scaleFactor += deltaY * 0.002f
+        binding.appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+            // Calculate the total scroll range of the CollapsingToolbarLayout
+            val totalScrollRange = appBarLayout.totalScrollRange
 
-            // Limit the scale factor to a reasonable range
-            scaleFactor = scaleFactor.coerceIn(1.0f, 2.0f)
+            // Calculate the percentage of collapse (0 to 1)
+            val collapseRatio = -verticalOffset.toFloat() / totalScrollRange.toFloat()
 
-            // Apply the scale factor to the ImageView
-            val scaleAnimation = ScaleAnimation(
-                0.5f, scaleFactor, // Start and end scale X
-                0.5f, scaleFactor, // Start and end scale Y
-                RELATIVE_TO_SELF, 0.5f, // Pivot point X
-                RELATIVE_TO_SELF, 0.5f // Pivot point Y
-            )
-            scaleAnimation.duration = 500 // No animation duration
-            scaleAnimation.fillAfter = true
+            // Calculate the target scale factor based on the collapse ratio
+            // Adjust the scaleFactor range as needed
+            val targetScaleFactor = 1.0f - collapseRatio * 0.5f
 
-            // Start the animation
-            binding.scrollingImageView.startAnimation(scaleAnimation)
+            // Use ValueAnimator to smoothly interpolate the scale factor
+            val animator = ValueAnimator.ofFloat(scaleFactor, targetScaleFactor)
+            animator.duration = 100 // Adjust the duration as needed
+            animator.addUpdateListener { animation ->
+                val animatedValue = animation.animatedValue as Float
 
-            lastScrollY = scrollY
-        })
+                // Apply the interpolated scale factor to the ImageView
+                binding.scrollingImageView.scaleX = animatedValue
+                binding.scrollingImageView.scaleY = animatedValue
+            }
+            animator.start()
+
+            // Update the scale factor
+            scaleFactor = targetScaleFactor
+
+            // Check if the CollapsingToolbarLayout is fully collapsed
+            if (verticalOffset == -totalScrollRange) {
+                if (!isCollapsed) {
+                    // The CollapsingToolbarLayout is now fully collapsed
+                    // Perform actions or call methods here
+                    isCollapsed = true
+                }
+            } else {
+                // The CollapsingToolbarLayout is not fully collapsed
+                isCollapsed = false
+            }
+
+            // Update the last vertical offset
+            lastVerticalOffset = verticalOffset
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         return binding.root
     }
 }
