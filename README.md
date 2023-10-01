@@ -11,3 +11,9 @@
   Working with premium fragment
   -> Started creating the UI
   -> Completed Scrolling effect
+01/10
+  Working with Premium fragment
+  -> Completed gradient color filling in cards
+  -> finishing the scroll fade effect.
+  -> Premium fragment completed.
+  Fixed bugs in the search fragment.
