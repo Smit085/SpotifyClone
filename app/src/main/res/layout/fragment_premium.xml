@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/white"
+    android:background="@color/transparent"
     tools:context=".PremiumFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -21,26 +21,74 @@
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
             app:contentScrim="@color/transparent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:alpha="0.7"
+                android:scaleType="fitXY"
+                android:src="@drawable/live_events_category_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                app:icon="@drawable/icon_premium"
+                android:padding="0dp"
+                app:iconPadding="10dp"
+                android:text="Premium"
+                app:iconTint="@color/white"
+                app:iconSize="28dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="1.00001"/>
+
+            <view
+                android:id="@+id/view2"
+                class="android.widget.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/gradient_black"
+                android:layout_gravity="bottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <LinearLayout
+                android:id="@+id/lin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:paddingEnd="5dp"
-                android:paddingStart="5dp"
-                android:paddingBottom="10dp"
-                app:layout_collapseMode="parallax"
-                android:layout_gravity="center"
-                app:layout_collapseParallaxMultiplier=".9"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_gravity="bottom"
+                android:background="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_collapseMode="pin">
 
-                <ImageView
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/live_events_category_img"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:text="FREE TRIAL"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:background="@color/transparent"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try Premium for free for 1\nmonth"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@color/transparent"/>
+            </LinearLayout>
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -48,22 +96,7 @@
                 android:background="@color/transparent"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="1"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    app:icon="@drawable/icon_premium"
-                    android:padding="0dp"
-                    app:iconPadding="10dp"
-                    android:text="Premium"
-                    app:iconTint="@color/white"
-                    app:iconSize="28dp"
-                    android:textColor="@color/white"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_scrollFlags="exitUntilCollapsed">
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -80,37 +113,11 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gradient_black"
-            android:paddingBottom="80dp">
-
-            <LinearLayout
-                android:id="@+id/lin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp"
-                android:background="@drawable/gradient_black"
-                android:fadingEdge="vertical"
-                android:fadingEdgeLength="200dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="FREE TRIAL"
-                    android:textSize="14sp"
-                    android:textColor="@color/white"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try Premium for free for 1\nmonth"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
+                android:background="@color/black"
+                android:padding="5dp"
+                android:paddingBottom="80dp">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_getpremium"
@@ -123,10 +130,13 @@
                 android:text="GET PREMIUM"
                 android:gravity="center"
                 app:cornerRadius="25dp"
-                android:layout_margin="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lin"/>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/txt_getpremium"
@@ -300,7 +310,8 @@
                     android:paddingTop="30dp"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
-                    android:paddingBottom="15dp">
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/gradient_blue">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -406,7 +417,8 @@
                     android:paddingTop="30dp"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
-                    android:paddingBottom="15dp">
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/gradient_green">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -512,7 +524,8 @@
                     android:paddingTop="30dp"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
-                    android:paddingBottom="15dp">
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/gradient_blue_purple">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -607,7 +620,6 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="35dp"
-                android:backgroundTint="#282828"
                 app:layout_constraintTop_toBottomOf="@+id/cardv_premiumduo"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -618,7 +630,8 @@
                     android:paddingTop="30dp"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
-                    android:paddingBottom="15dp">
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/gradient_purple_violet">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -724,7 +737,8 @@
                     android:paddingTop="30dp"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
-                    android:paddingBottom="15dp">
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/gradient_orange">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -813,5 +827,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
