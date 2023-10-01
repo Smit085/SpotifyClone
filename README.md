@@ -17,3 +17,4 @@
   -> finishing the scroll fade effect.
   -> Premium fragment completed.
   Fixed bugs in the search fragment.
+  Tried to perform image scaling effect on scroll but not found complete success.
