@@ -16,3 +16,4 @@
   -> Completed gradient color filling in cards
   -> finishing the scroll fade effect.
   -> Premium fragment completed.
+  Fixed bugs in the search fragment.
