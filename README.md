@@ -18,3 +18,9 @@
   -> Premium fragment completed.
   Fixed bugs in the search fragment.
   Tried to perform image scaling effect on scroll but not found complete success.
+02/11
+  Working with premium fragment
+  -> Successfully executed image scaling effect for header image in premium fragment.
+  -> Fixed some bugs and formated the code.
+  Started working with playlist fragment.
+  -> Executed the image scaling effect.
