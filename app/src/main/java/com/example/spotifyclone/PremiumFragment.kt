@@ -64,10 +64,6 @@ class PremiumFragment : Fragment() {
             lastVerticalOffset = verticalOffset
         }
 
-
-
-
-
         return binding.root
     }
 }
