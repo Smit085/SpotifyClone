@@ -21,9 +21,9 @@
             app:iconifiedByDefault="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null"
             app:queryHint="What do you want to listen to?"
-            app:searchIcon="@null"
-            app:queryBackground="@null"/>
+            app:searchIcon="@null" />
 
         <ImageButton
             android:id="@+id/imgbtn_back"
@@ -47,8 +47,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginBottom="35dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

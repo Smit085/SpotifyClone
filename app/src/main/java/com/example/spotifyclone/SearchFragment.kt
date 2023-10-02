@@ -47,6 +47,11 @@ class SearchFragment : Fragment() {
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
         arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
 
 
         val arrayList1 = ArrayList(arrCatg.subList(0, 3))
