@@ -1,32 +1,37 @@
 # SpotifyClone
-## [Started maintaining the READ.md file]
-29/09<br>
-&nbsp; Working with the search fragment<br>
-&nbsp; -> Trying to execute collapsing toolbar with searchview and recyclerview.<br>
-&nbsp; -> Done.<br>
-30/09<br>
-&nbsp; Working with the search fragment<br>
--> Created new searchbar Fragment for search fragment.<br>
--> Trying to make the searchbar only clickable in the search fragment<br>
-&nbsp; Working with premium fragment<br>
-Started creating the UI<br>
-Completed Scrolling effect<br>
-01/10<br>
-&nbsp; Working with Premium fragment<br>
-&nbsp; -> Starting with the UI.<br>
-&nbsp; -> Finishing the scroll fade effect.<br>
-&nbsp; -> Premium fragment completed.<br>
-&nbsp; Fixed bugs in the search fragment.<br>
-&nbsp; Tried to perform image scaling effect on scroll but not found complete success.<br>
-02/11<br>
-&nbsp; Working with premium fragment<br>
-&nbsp; -> Completed gradient color filling in cards.<br>
-&nbsp; -> Successfully executed image scaling effect for header image in premium fragment.<br>
-&nbsp; -> Fixed some bugs and formatted the code.<br>
-&nbsp; Started working with playlist fragment.<br>
-&nbsp; -> Executed the image scaling effect.<br>
-03/11<br>
-&nbsp; Working with playlist fragment<br>
-&nbsp; -> Starting with the UI.<br>
-&nbsp; -> Included header elements.<br>
-&nbsp; -> Trying to execute image collapsing effect in the header.<br>
+## [Started maintaining the README.md file]
+
+- **29/09**
+  - Working with the search fragment
+    - Trying to execute collapsing toolbar with searchview and recyclerview.
+    - Done.
+
+- **30/09**
+  - Working with the search fragment
+    - Created new searchbar Fragment for search fragment.
+    - Trying to make the searchbar only clickable in the search fragment
+  - Working with premium fragment
+    - Started creating the UI
+    - Completed Scrolling effect
+
+- **01/10**
+  - Working with Premium fragment
+    - Starting with the UI.
+    - Finishing the scroll fade effect.
+    - Premium fragment completed.
+  - Fixed bugs in the search fragment.
+  - Tried to perform image scaling effect on scroll but not found complete success.
+
+- **02/11**
+  - Working with premium fragment  
+    - Completed gradient color filling in cards.
+    - Successfully executed image scaling effect for header image in premium fragment.
+    - Fixed some bugs and formatted the code.
+  - Started working with playlist fragment.
+    - Executed the image scaling effect.
+
+- **03/11**
+  - Working with playlist fragment
+    - Starting with the UI.
+    - Included header elements.
+    - Trying to execute image collapsing effect in the header.
