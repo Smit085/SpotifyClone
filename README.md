@@ -1,4 +1,4 @@
-######SpotifyClone
+#######################SpotifyClone
 ------------[Started maintaining the READ.md file]------------
 29/09
   Working with the search fragment
