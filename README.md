@@ -6,11 +6,11 @@
 &nbsp; -> Done.<br>
 30/09<br>
 &nbsp; Working with the search fragment<br>
-&nbsp; -> Created new searchbar Fragment for search fragment.<br>
-&nbsp; -> Trying to make the searchbar only clickable in the search fragment<br>
+-> Created new searchbar Fragment for search fragment.<br>
+-> Trying to make the searchbar only clickable in the search fragment<br>
 &nbsp; Working with premium fragment<br>
-&nbsp; -> Started creating the UI<br>
-&nbsp; -> Completed Scrolling effect<br>
+Started creating the UI<br>
+Completed Scrolling effect<br>
 01/10<br>
 &nbsp; Working with Premium fragment<br>
 &nbsp; -> Starting with the UI.<br>
