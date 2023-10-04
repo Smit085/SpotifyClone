@@ -47,15 +47,15 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <view
-                    android:id="@+id/view2"
-                    class="android.widget.TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/gradient_black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+<!--                <view-->
+<!--                    android:id="@+id/view2"-->
+<!--                    class="android.widget.TextView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="180dp"-->
+<!--                    android:layout_gravity="bottom"-->
+<!--                    android:background="@drawable/gradient_black"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent" />-->
 
                 <LinearLayout
                 android:id="@+id/lin"
@@ -266,14 +266,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        android:layout_margin="16dp"-->
-<!--        android:src="@drawable/icon_search"-->
-<!--        app:fabSize="normal"-->
-<!--        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"-->
-<!--        app:tint="@android:color/white" />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/icon_search"
+        app:fabSize="normal"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        app:tint="@android:color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
