@@ -19,7 +19,7 @@
             android:background="@drawable/gradient_playlist"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:layout_weight="1">
-<!--            app:titleCollapseMode="fade"-->
+            <!--            app:titleCollapseMode="fade"-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,142 +47,134 @@
 
                 </androidx.cardview.widget.CardView>
 
-<!--                <view-->
-<!--                    android:id="@+id/view2"-->
-<!--                    class="android.widget.TextView"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="180dp"-->
-<!--                    android:layout_gravity="bottom"-->
-<!--                    android:background="@drawable/gradient_black"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent" />-->
+                <!--                <view-->
+                <!--                    android:id="@+id/view2"-->
+                <!--                    class="android.widget.TextView"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="180dp"-->
+                <!--                    android:layout_gravity="bottom"-->
+                <!--                    android:background="@drawable/gradient_black"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent" />-->
 
                 <LinearLayout
-                android:id="@+id/lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:background="@color/transparent"
-                android:orientation="vertical"
-                app:layout_collapseMode="pin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
+                    android:id="@+id/lin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:background="@color/transparent"
-                    android:text="Trust us, you need this!"
-                    android:textColor="@color/white_inactive"
-                    android:textSize="12sp" />
+                    android:orientation="vertical"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:orientation="horizontal"
-                    android:layout_margin="0dp">
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:icon="@drawable/icon_spotify_green"
                         android:background="@color/transparent"
+                        android:text="Trust us, you need this!"
                         android:textColor="@color/white_inactive"
-                        app:iconTint="@color/green"
-                        android:padding="0dp"
-                        android:textStyle="bold"
-                        app:iconPadding="0dp"
-                        android:text="Made for"/>
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="0dp">
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:icon="@drawable/icon_spotify_green"
+                            android:background="@color/transparent"
+                            android:textColor="@color/white_inactive"
+                            app:iconTint="@color/green"
+                            android:padding="0dp"
+                            android:textStyle="bold"
+                            app:iconPadding="0dp"
+                            android:text="Made for"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PATEL SMIT"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PATEL SMIT"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"/>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="186,637 likes • 3h 30min"
-                    android:textColor="@color/white_inactive"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:orientation="horizontal"
-                    android:paddingBottom="15dp">
+                        android:background="@color/transparent"
+                        android:text="186,637 likes • 3h 30min"
+                        android:textColor="@color/white_inactive"
+                        android:textStyle="bold" />
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start|center_vertical"
-                        android:layout_weight="2">
+                        android:paddingTop="5dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="15dp">
 
-                        <ImageButton
-                            android:id="@+id/btn_fav"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/icon_favourite"
-                            android:scaleType="fitCenter"
-                            android:padding="0dp"
-                            android:backgroundTint="@color/transparent"/>
-
-                        <ImageButton
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/outline_download_24"
-                            android:scaleType="fitCenter"
-                            android:padding="0dp"
-                            android:layout_marginStart="20dp"
-                            android:backgroundTint="@color/transparent"/>
-
-                        <ImageButton
-                            android:layout_width="20dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/icon_threedots_menu"
-                            android:scaleType="fitCenter"
-                            android:padding="0dp"
-                            android:layout_marginStart="20dp"
-                            android:backgroundTint="@color/transparent"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="start|center_vertical"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/icon_shuffle"
-                            android:scaleType="fitCenter"
-                            android:padding="0dp"
-                            android:layout_marginStart="20dp"
-                            android:backgroundTint="@color/transparent"
-                            android:layout_gravity="end"/>
-
-                        <ImageButton
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/baseline_play_circle_green"
-                            android:scaleType="fitCenter"
-                            android:padding="0dp"
-                            android:layout_marginStart="20dp"
-                            android:backgroundTint="@color/transparent"
-                            android:layout_gravity="end"/>
+                            android:gravity="start|center_vertical"
+                            android:layout_weight="2">
 
+                            <ImageButton
+                                android:id="@+id/btn_fav"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/icon_favourite"
+                                android:scaleType="fitCenter"
+                                android:padding="0dp"
+                                android:backgroundTint="@color/transparent"/>
+
+                            <ImageButton
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/outline_download_24"
+                                android:scaleType="fitCenter"
+                                android:padding="0dp"
+                                android:layout_marginStart="20dp"
+                                android:backgroundTint="@color/transparent"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/icon_threedots_menu"
+                                android:scaleType="fitCenter"
+                                android:padding="0dp"
+                                android:layout_marginStart="20dp"
+                                android:backgroundTint="@color/transparent"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:layout_weight="1">
+
+                            <ImageButton
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/icon_shuffle"
+                                android:scaleType="fitCenter"
+                                android:padding="0dp"
+                                android:layout_marginStart="20dp"
+                                android:backgroundTint="@color/transparent"
+                                android:layout_gravity="end"/>
+
+
+
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
 
             </LinearLayout>
 
@@ -196,6 +188,15 @@
 
             </androidx.appcompat.widget.Toolbar>
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_play_circle_green"
+                android:scaleType="fitCenter"
+                android:padding="0dp"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/transparent"
+                android:layout_gravity="bottom|end"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
