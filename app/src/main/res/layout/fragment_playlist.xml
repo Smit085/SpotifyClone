@@ -188,15 +188,30 @@
 
             </androidx.appcompat.widget.Toolbar>
 
-            <ImageButton
+<!--            <ImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/baseline_play_circle_green"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:padding="0dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:backgroundTint="@color/transparent"-->
+<!--                android:layout_gravity="bottom|end"/>-->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="26dp"
                 android:src="@drawable/baseline_play_circle_green"
-                android:scaleType="fitCenter"
-                android:padding="0dp"
-                android:layout_marginStart="20dp"
+                app:fabSize="normal"
+                app:fabCustomSize="70dp"
+                app:maxImageSize="70dp"
+                android:outlineSpotShadowColor="@color/transparent"
                 android:backgroundTint="@color/transparent"
-                android:layout_gravity="bottom|end"/>
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:tint="@color/green"/>
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
@@ -267,14 +282,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/icon_search"
-        app:fabSize="normal"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-        app:tint="@android:color/white" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:src="@drawable/icon_search"-->
+<!--        app:fabSize="normal"-->
+<!--        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"-->
+<!--        app:tint="@android:color/white" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
