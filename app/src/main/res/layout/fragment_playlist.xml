@@ -198,22 +198,22 @@
 <!--                android:backgroundTint="@color/transparent"-->
 <!--                android:layout_gravity="bottom|end"/>-->
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="26dp"
-                android:src="@drawable/baseline_play_circle_green"
-                app:fabSize="normal"
-                app:fabCustomSize="70dp"
-                app:maxImageSize="70dp"
-                android:outlineSpotShadowColor="@color/transparent"
-                android:backgroundTint="@color/transparent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                app:tint="@color/green"/>
+
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/baseline_play_circle_green"
+            app:fabSize="normal"
+            app:fabCustomSize="70dp"
+            app:maxImageSize="70dp"
+            android:background="@color/transparent"
+            android:backgroundTint="@color/transparent"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:tint="@color/green"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
