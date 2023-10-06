@@ -120,34 +120,18 @@ class PlaylistFragment : Fragment() {
                     // The CollapsingToolbarLayout is now fully collapsed
                     // Perform actions or call methods here
                     isCollapsed = true
+                    binding.txtTitle.visibility = View.VISIBLE
                 }
             } else {
                 // The CollapsingToolbarLayout is not fully collapsed
                 isCollapsed = false
+                binding.txtTitle.visibility = View.GONE
             }
 
             // Update the last vertical offset
             lastVerticalOffset = verticalOffset
+
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         return binding.root
     }
