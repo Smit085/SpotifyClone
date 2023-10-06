@@ -26,10 +26,6 @@
             app:expandedTitleTextColor="@color/transparent"
             app:collapsedTitleTextAppearance="@style/collapsedTitleTextAppearance"
             app:expandedTitleMarginBottom="20dp"
-
-
-
-
             >
 <!--            483A20-->
 <!--            @color/material_on_primary_emphasis_high_type"-->
