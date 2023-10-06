@@ -13,4 +13,34 @@
         android:textSize="100sp"
         android:gravity="center"/>
 
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_margin="16dp"-->
+    <!--        android:src="@drawable/icon_search"-->
+    <!--        app:fabSize="normal"-->
+    <!--        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"-->
+    <!--        app:tint="@android:color/white" />-->
+
+<!--    <FrameLayout&ndash;&gt;-->
+    <!--        android:id="@+id/customFabLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:background="@color/transparent"-->
+    <!--        android:backgroundTint="@color/transparent"-->
+    <!--        app:layout_anchor="@id/appBarLayout"-->
+    <!--        app:layout_anchorGravity="bottom|end">-->
+
+    <!--        &lt;!&ndash; Your FAB icon or image &ndash;&gt;-->
+    <!--        <ImageView-->
+    <!--            android:id="@+id/customFabIcon"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:src="@drawable/baseline_play_circle_green"-->
+    <!--            android:background="@android:color/transparent"-->
+    <!--            app:tint="@color/green" />-->
+
+    <!--    </FrameLayout>-->
 </FrameLayout>
