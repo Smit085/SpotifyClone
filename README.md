@@ -35,7 +35,16 @@
     - Starting with the UI.
     - Included header elements.
     - Trying to execute image collapsing effect in the header.
+
 - **04/11**
   - Working with playlist fragment
     - Design view for one item in song list recyclerview.
     - Included recyclerview for the list of songs in the playlist
+
+- **05/11**
+  - Working with playlist fragment
+    - Try to perform sticky animation for play button in toolbar.
+
+- **06/11**
+  - Working with playlist fragment
+    - Perfectly done sticky animation for play button in toolbar with collapsing image.

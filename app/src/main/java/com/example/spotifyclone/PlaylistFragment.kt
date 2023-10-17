@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spotifyclone.databinding.FragmentPlaylistBinding
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -21,7 +22,7 @@ import kotlin.math.abs
 
 class PlaylistFragment : Fragment() {
     private lateinit var binding: FragmentPlaylistBinding
-    var arrCatg = ArrayList<CategoryCardModel>()
+    var arrsongdis = ArrayList<SongCardModel>()
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -31,57 +32,30 @@ class PlaylistFragment : Fragment() {
 
         binding = FragmentPlaylistBinding.inflate(inflater, container, false)
 
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img, "Live Events\nnear you"))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",false))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
+        arrsongdis.add(SongCardModel(R.drawable.img_playlistbanner, "Chaleya (From \"Jawan\")","Anirudh Ravichander, Arjit Singh, Shilpa Rao, Kumaar",true))
 
 
-        val arrayList1 = ArrayList(arrCatg.subList(0, 3))
-        val arrayList2 = ArrayList(arrCatg.subList(3, arrCatg.size))
+        val adapter = RecyclerSongAdapter(requireContext(), arrsongdis)
 
-        val adapter1 = RecyclerCategoryAdapter(requireContext(), arrayList1)
-//        binding.recyclerView1.adapter = adapter1
-
-        val adapter2 = RecyclerCategoryAdapter(requireContext(), arrayList2)
-//        binding.recyclerView1.adapter = adapter2
-
-        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.recyclerView1.adapter = adapter1
-
-        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.recyclerView2.adapter = adapter2
-
-        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.recyclerView1.adapter = adapter1
-
-        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.recyclerView2.adapter = adapter2
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = adapter
 
 
         var isCollapsed = false
@@ -132,6 +106,16 @@ class PlaylistFragment : Fragment() {
             lastVerticalOffset = verticalOffset
 
         }
+
+
+
+
+
+
+
+
+
+
 
         return binding.root
     }
