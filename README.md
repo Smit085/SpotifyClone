@@ -38,7 +38,7 @@
 
 - **04/11**
   - Working with playlist fragment
-    - Design view for one item in song list recyclerview.
+    - Designed view for one item in song list recyclerview.
     - Included recyclerview for the list of songs in the playlist
 
 - **05/11**
@@ -53,6 +53,5 @@
 
 - **18/11**
   - Working with Home fragment
-    - Started with the UI.
-    - Completed the UI for recent card for header.
-    - Added Recyclerview with its dataAdapter.
+    - Starting with the UI.
+    - Completed the UI for recent card for header and added Recyclerview with its dataAdapter.
