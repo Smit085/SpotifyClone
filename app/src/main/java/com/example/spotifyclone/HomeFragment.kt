@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spotifyclone.databinding.FragmentHomeBinding
 
@@ -24,13 +25,15 @@ class HomeFragment : Fragment() {
         arr_recents.add(RecentsCardModel(R.drawable.img_playlistbanner, "Latest Love Tunes"))
         arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "2016-2018 Hindi Songs"))
         arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "Hot Hits Hindi"))
+        arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "I-Pop Superhits"))
+        arr_recents.add(RecentsCardModel(R.drawable.img_popularartist1, "This Is Pritam"))
         arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "Arjit Singh Lofi Song❤️"))
 
         val adapter = RecyclerRecentsAdapter(requireContext(), arr_recents)
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = adapter
+        binding.recyclerViewRecents.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerViewRecents.adapter = adapter
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return binding.root
     }
 }

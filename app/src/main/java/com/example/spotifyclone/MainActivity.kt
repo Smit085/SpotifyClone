@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        loadFragment(PlaylistFragment(),0)
+        loadFragment(HomeFragment(),0)
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
         supportFragmentManager.addOnBackStackChangedListener(this)
 
         binding.btnHome.setOnClickListener {
-            loadFragment(PlaylistFragment(),0)
+            loadFragment(HomeFragment(),0)
             change_btnState(binding.btnHome,R.drawable.icon_home_filled)
             binding.btnHome.startAnimation(scaleAnimation)
         }
