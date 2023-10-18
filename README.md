@@ -48,3 +48,11 @@
 - **06/11**
   - Working with playlist fragment
     - Perfectly done sticky animation for play button in toolbar with collapsing image.
+
+- **[06/11 to 16/11] Exam Prep and Assignment**
+
+- **18/11**
+  - Working with Home fragment
+    - Started with the UI.
+    - Completed the UI for recent card for header.
+    - Added Recyclerview with its dataAdapter.
