@@ -55,3 +55,4 @@
   - Working with Home fragment
     - Starting with the UI.
     - Completed the UI for recent card for header and added Recyclerview with its dataAdapter.
+    - Started dailymix Recyclerview.
