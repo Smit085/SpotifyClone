@@ -49,7 +49,7 @@
   - Working with playlist fragment
     - Perfectly done sticky animation for play button in toolbar with collapsing image.
 
-- **[06/11 to 16/11] Exam Prep and Assignment**
+- **[06/11 to 16/11] Exam Prep and Assignment Completion**
 
 - **18/11**
   - Working with Home fragment
