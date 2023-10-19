@@ -22,7 +22,7 @@
   - Fixed bugs in the search fragment.
   - Tried to perform image scaling effect on scroll but not found complete success.
 
-- **02/11**
+- **02/10**
   - Working with premium fragment  
     - Completed gradient color filling in cards.
     - Successfully executed image scaling effect for header image in premium fragment.
@@ -30,29 +30,34 @@
   - Started working with playlist fragment.
     - Executed the image scaling effect.
 
-- **03/11**
+- **03/10**
   - Working with playlist fragment
     - Starting with the UI.
     - Included header elements.
     - Trying to execute image collapsing effect in the header.
 
-- **04/11**
+- **04/10**
   - Working with playlist fragment
     - Designed view for one item in song list recyclerview.
     - Included recyclerview for the list of songs in the playlist
 
-- **05/11**
+- **05/10**
   - Working with playlist fragment
     - Try to perform sticky animation for play button in toolbar.
 
-- **06/11**
+- **06/10**
   - Working with playlist fragment
     - Perfectly done sticky animation for play button in toolbar with collapsing image.
 
-- **[06/11 to 16/11] Exam Prep and Assignment Completion**
+- **[06/10 to 16/10] Exam Prep and Assignment Completion**
 
-- **18/11**
+- **18/10**
   - Working with Home fragment
     - Starting with the UI.
     - Completed the UI for recent card for header and added Recyclerview with its dataAdapter.
     - Started dailymix Recyclerview.
+
+- **19/10**
+  - Working with Home fragment
+    - Completed UI by including recyclerview for Dailymix, Best of artists, India's best and Jump back in with their card model and dataAdapter.
+    - Added CollapsingToolbarLayout to get scrolling effect and successfully executed it.
