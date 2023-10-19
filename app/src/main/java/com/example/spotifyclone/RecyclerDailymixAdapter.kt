@@ -8,30 +8,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerRecentsAdapter: RecyclerView.Adapter<RecyclerRecentsAdapter.ViewHolder> {
+class RecyclerDailymixAdapter: RecyclerView.Adapter<RecyclerDailymixAdapter.ViewHolder> {
     private var context: Context
-    private var arr_recents = ArrayList<RecentsCardModel>()
-    constructor(context: Context, arr_recents: ArrayList<RecentsCardModel>){
+    private var arr_dailymix = ArrayList<DailymixCardModel>()
+    constructor(context: Context, arr_dailymix: ArrayList<DailymixCardModel>){
         this.context = context
-        this.arr_recents = arr_recents
+        this.arr_dailymix = arr_dailymix
     }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val img_recents: ImageView = itemView.findViewById(R.id.img_recents)
+        val img_dailymix: ImageView = itemView.findViewById(R.id.img_dailymix)
         val txt_name: TextView = itemView.findViewById(R.id.txt_name)
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_home_recents, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_home_dailymix, parent, false)
         return ViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.img_recents.setImageResource(arr_recents.get(position).img)
-        holder.txt_name.text = arr_recents[position].name
+        holder.img_dailymix.setImageResource(arr_dailymix.get(position).img)
+        holder.txt_name.text = arr_dailymix[position].name
     }
-
-
     override fun getItemCount(): Int {
-        return arr_recents.size
+        return arr_dailymix.size
     }
 }

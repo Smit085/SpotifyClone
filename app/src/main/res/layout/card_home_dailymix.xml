@@ -7,14 +7,17 @@
     android:background="@color/black">
 
     <ImageView
+        android:id="@+id/img_dailymix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_dailymix1"/>
 
     <TextView
+        android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pritam, Arijit Singh, Imdad Hussain and more"
+        android:textSize="18sp"
         android:textColor="@color/white_inactive"
         android:ellipsize="end"
         android:maxLines="2"
