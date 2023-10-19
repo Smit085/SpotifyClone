@@ -52,7 +52,7 @@
                         android:layout_height="30dp"
                         android:src="@drawable/icon_notification_bell_24"
                         android:background="@color/transparent"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="5dp"/>
 
                     <ImageButton
                         android:layout_width="30dp"
@@ -60,7 +60,7 @@
                         android:src="@drawable/icon_profile_24"
                         android:background="@drawable/round_button_background"
                         android:backgroundTint="@color/orange"
-                        android:layout_marginStart="10dp"/>
+                        android:layout_marginStart="5dp"/>
 
                 </LinearLayout>
 
