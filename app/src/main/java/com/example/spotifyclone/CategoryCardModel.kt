@@ -1,11 +1,13 @@
 package com.example.spotifyclone
 
 class CategoryCardModel {
-    var img:Int = 0;
-    var catName: String = ""
+    var imgurl: String = "";
+    var name: String = ""
+    var bg_color: String = ""
 
-    constructor(img:Int,catName:String){
-        this.catName = catName
-        this.img = img
+    constructor(imgurl:String,name:String,bg_color: String){
+        this.name = name
+        this.imgurl = imgurl
+        this.bg_color = bg_color
     }
 }

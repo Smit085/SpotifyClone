@@ -1,12 +1,16 @@
 package com.example.spotifyclone
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class RecyclerCategoryAdapter : RecyclerView.Adapter<RecyclerCategoryAdapter.ViewHolder> {
 
@@ -19,6 +23,7 @@ class RecyclerCategoryAdapter : RecyclerView.Adapter<RecyclerCategoryAdapter.Vie
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txt_genre: TextView = itemView.findViewById(R.id.txt_genre)
         val img_genre: ImageView = itemView.findViewById(R.id.img_genre)
+        val cardview: CardView = itemView.findViewById(R.id.cardview)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,8 +32,15 @@ class RecyclerCategoryAdapter : RecyclerView.Adapter<RecyclerCategoryAdapter.Vie
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.txt_genre.setText(arrCatg.get(position).catName)
-        holder.img_genre.setImageResource(arrCatg.get(position).img)
+        if(arrCatg.get(position).name.isNotBlank()){
+            holder.txt_genre.text = arrCatg[position].name
+        }
+        if (arrCatg.get(position).imgurl.isNotBlank()) {
+            Picasso.get().load(arrCatg[position].imgurl).into(holder.img_genre)
+        }
+        if (arrCatg[position].bg_color.isNotBlank()) {
+            holder.cardview.backgroundTintList = ColorStateList.valueOf(Color.parseColor(arrCatg[position].bg_color))
+        }
 
     }
 

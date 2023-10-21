@@ -1,74 +1,71 @@
 package com.example.spotifyclone
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.spotifyclone.databinding.FragmentSearchBinding
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
-    var arrCatg = ArrayList<CategoryCardModel>()
+    private lateinit var viewModel: DataViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSearchBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(requireActivity()).get(DataViewModel::class.java)
 
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
-        arrCatg.add(CategoryCardModel(R.drawable.live_events_category_img,"Live Events\nnear you"))
+        if (!viewModel.genres_dataFetched) {
+            fetchDataFromFirestore()
+        } else {
+            setupRecyclerViews()
+        }
+        return binding.root
+    }
 
+    private fun fetchDataFromFirestore() {
+        val db = FirebaseFirestore.getInstance()
+        val collectionPath = "genres"
 
-        val arrayList1 = ArrayList(arrCatg.subList(0, 3))
-        val arrayList2 = ArrayList(arrCatg.subList(3, arrCatg.size))
+        db.collection(collectionPath)
+            .get()
+            .addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
+                if (task.isSuccessful) {
+                    for (document in task.result!!) {
+                        val data = document.data
+                        val bgColor = data["bg_color"] as String
+                        val imgurl = data["image"] as String
+                        val name = data["name"] as String
+                        viewModel.arrCatg.add(CategoryCardModel(imgurl, name, bgColor))
+                    }
+                    viewModel.genres_dataFetched = true
+                    setupRecyclerViews()
+                } else {
+                    Log.e("TAG", "Error fetching documents: ${task.exception}")
+                }
+            })
+    }
+
+    private fun setupRecyclerViews() {
+        val arrayList1 = ArrayList(viewModel.arrCatg.take(3))
+        val arrayList2 = ArrayList(viewModel.arrCatg.drop(3))
 
         val adapter1 = RecyclerCategoryAdapter(requireContext(), arrayList1)
-//        binding.recyclerView1.adapter = adapter1
-
         val adapter2 = RecyclerCategoryAdapter(requireContext(), arrayList2)
-//        binding.recyclerView1.adapter = adapter2
 
-        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView1.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView1.adapter = adapter1
 
-        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView2.adapter = adapter2
-
-        return binding.root
     }
 }

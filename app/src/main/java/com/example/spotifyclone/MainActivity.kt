@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         }
 
         binding.btnLibrary.setOnClickListener(){
-            loadFragment(SearchbarFragment(),1)
+            loadFragment(LibraryFragment(),1)
             change_btnState(binding.btnLibrary,R.drawable.icon_library_filled)
             binding.btnLibrary.startAnimation(scaleAnimation)
         }
