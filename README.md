@@ -61,3 +61,12 @@
   - Working with Home fragment
     - Completed UI by including recyclerview for Dailymix, Best of artists, India's best and Jump back in with their card model and dataAdapter.
     - Added CollapsingToolbarLayout to get scrolling effect and successfully executed it.
+- **20/10**
+  - Stared working on Api call
+    - Tried many approaches to integrate spotify api into the project but din't worked as expected.
+    - Facing dependency issues while importing the module rewuired for spotify android sdk.
+    - Refered the official website but the information in outdated their.
+- **21/10**
+  - Shifted to Database(Firestore Firebase) as of now, keeping the deadline in mind.
+    - Completed creating the collection for 'genres'.
+    - Setup the database call to fetch card images,backgeound,name of the 'genres'.
