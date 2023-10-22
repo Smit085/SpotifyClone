@@ -18,24 +18,24 @@ class LibraryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val retrofitBuilder = Retrofit.Builder()
-            .baseUrl("https://deezerdevs-deezer.p.rapidapi.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiInterface::class.java)
-
-        val  retofitData = retrofitBuilder.getData("eminem")
-
-        retofitData.enqueue(object : Callback<ApiData?> {
-            override fun onResponse(call: Call<ApiData?>, response: Response<ApiData?>) {
-                val dataList = response.body()?.total
-                Log.i("Onresponse",response.body()?.total.toString())
-            }
-
-            override fun onFailure(call: Call<ApiData?>, t: Throwable) {
-                Log.i("onFailure","NO"+t.message)
-            }
-        })
+//        val retrofitBuilder = Retrofit.Builder()
+//            .baseUrl("https://deezerdevs-deezer.p.rapidapi.com/")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//            .create(ApiInterface::class.java)
+//
+//        val  retofitData = retrofitBuilder.getData("eminem")
+//
+//        retofitData.enqueue(object : Callback<ApiData?> {
+//            override fun onResponse(call: Call<ApiData?>, response: Response<ApiData?>) {
+//                val dataList = response.body()?.total
+//                Log.i("Onresponse",response.body()?.total.toString())
+//            }
+//
+//            override fun onFailure(call: Call<ApiData?>, t: Throwable) {
+//                Log.i("onFailure","NO"+t.message)
+//            }
+//        })
 
 
 

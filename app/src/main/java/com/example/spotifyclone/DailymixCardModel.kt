@@ -1,11 +1,15 @@
 package com.example.spotifyclone
 
 class DailymixCardModel {
-    var img:Int = 0;
+    var id: String = ""
+    var imgurl: String = "";
     var name: String = ""
+    var description: String = ""
 
-    constructor(img:Int,name:String){
-        this.img = img
+    constructor(id: String,imgurl: String,name: String,description: String){
+        this.id = id
+        this.description = description
+        this.imgurl = imgurl
         this.name = name
     }
 }
