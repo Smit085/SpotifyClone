@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class PlaylistFragment : Fragment() {
     private lateinit var binding: FragmentPlaylistBinding
     private lateinit var viewModel: DataViewModel
-
+    var fav_state = 0
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -34,17 +34,13 @@ class PlaylistFragment : Fragment() {
         binding = FragmentPlaylistBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity()).get(DataViewModel::class.java)
 
-//        if(!viewModel.arrsongdis_dataFetched){
-//            setupRecyclerViews()
-//        }
-
         binding.txtDescription.text = arguments?.getString("description")
         Picasso.get().load(arguments?.getString("imgurl")).into(binding.imgPlaylist)
         arguments?.getString("id")?.let { fetchDataFromApi(it) }
 
 
         var isCollapsed = false
-        var scaleFactor = 1.0f // Initialize the scale factor
+        var scaleFactor = 1.0f
         var lastVerticalOffset = 0
 
         binding.appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
@@ -92,6 +88,16 @@ class PlaylistFragment : Fragment() {
 
         }
 
+        binding.btnFav.setOnClickListener {
+            if(fav_state == 0) {
+                binding.btnFav.setImageResource(R.drawable.icon_favourite_red)
+                fav_state = 1
+            }
+            else{
+                binding.btnFav.setImageResource(R.drawable.icon_favourite)
+                fav_state = 0
+            }
+        }
         return binding.root
     }
 
@@ -107,6 +113,7 @@ class PlaylistFragment : Fragment() {
         retofitData.enqueue(object : Callback<PlaylistInfo?> {
             override fun onResponse(call: Call<PlaylistInfo?>, response: Response<PlaylistInfo?>) {
                 val dataList = response.body()
+                viewModel.arrsongdis.clear()
                 dataList?.items?.let { items ->
                     for (item in items) {
                         val min = String.format("%02d", (item.track.duration_ms / 1000 / 60))
@@ -114,7 +121,7 @@ class PlaylistFragment : Fragment() {
                         viewModel.arrsongdis.add(SongCardModel(
                             item.track.album.images[2].url,
                             item.track.name,
-                            item.track.artists.joinToString { it.name } + "." ,
+                            item.track.artists.joinToString { it.name },
                             "$min:$sec",
                             false
                         ))
@@ -131,11 +138,11 @@ class PlaylistFragment : Fragment() {
         })
     }
 
-
     private fun setupRecyclerViews() {
         val adapter = RecyclerSongAdapter(requireContext(), viewModel.arrsongdis)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
+
 }

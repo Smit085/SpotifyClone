@@ -7,7 +7,6 @@ class DataViewModel : ViewModel() {
     var dailymix_dataFetched = false
     var bestartists_dataFetched = false
     var indiasbest_dataFetched = false
-    var arrsongdis_dataFetched = false
     val arrCatg = ArrayList<CategoryCardModel>()
     var arr_recents = ArrayList<RecentsCardModel>()
     var arr_dailymix = ArrayList<DailymixCardModel>()
