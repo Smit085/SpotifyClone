@@ -66,9 +66,22 @@
   - Stared working on Api call
     - Tried many approaches to integrate spotify api into the project but din't worked as expected.
     - Facing dependency issues while importing the module rewuired for spotify android sdk.
-    - Refered the official website but the information in outdated their.
+    - Refered the official website but the information given their is outdated.
 
 - **21/10**
-  - Shifted to Database(Firestore Firebase) as of now, keeping the deadline in mind.
-    - Completed creating the collection for 'genres'.
+  - Shifted to Database(Firestore Firebase) as of now, keeping the deadline in mind
+    - Completed creating collection for 'genres'.
     - Setup the database call to fetch card images,backgeound,name of the 'genres'.
+
+- **22/10**
+  - Working with Database
+    - Completed creating collections for dailymix,indiasbest and bestartists.
+    - Fetched their data into the fragment.
+    - Tried data passing from one fragment to another but can't execute it.
+
+- **23/11**
+  - Successfully executed data passing from one fragment to another using bundel passing.
+  - Trying to work with Api again
+    - Found a freemium api for music and it metadata on rapidapi.
+    - Successfully made first call to the api.
+    - Started working with the song metadata and displayed it in the playlist fragment.
