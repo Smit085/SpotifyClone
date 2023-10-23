@@ -1,5 +1,6 @@
 package com.example.spotifyclone
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
             binding.btnPremium.startAnimation(scaleAnimation)
         }
 
+        binding.cardMusiccontrol.setOnClickListener {
+            startActivity(Intent(this, MusicActivity::class.java))
+        }
     }
     private fun loadFragment(fragment: Fragment,flag: Int){
         val fm: FragmentManager = supportFragmentManager;
