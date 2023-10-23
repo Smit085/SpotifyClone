@@ -1,15 +1,17 @@
 package com.example.spotifyclone
 
 class SongCardModel {
-    var songImage:Int = 0;
-    var songName: String = ""
-    var singerName: String = ""
+    var imgurl:String = "";
+    var name: String = ""
+    var singers: String = ""
+    var duration: String = ""
     var lyrics: Boolean = false
 
-    constructor(img: Int,songName: String, singerName: String, lyrics: Boolean){
-        this.songImage = img
-        this.songName = songName
-        this.singerName = singerName
+    constructor(imgurl: String,name: String, singers: String,duration: String, lyrics: Boolean){
+        this.imgurl = imgurl
+        this.name = name
+        this.singers = singers
+        this.duration = duration
         this.lyrics = lyrics
     }
 }

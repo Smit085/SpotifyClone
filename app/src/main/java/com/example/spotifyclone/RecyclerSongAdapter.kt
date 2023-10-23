@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class RecyclerSongAdapter: RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder> {
 
@@ -20,6 +21,7 @@ class RecyclerSongAdapter: RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder> 
         val img_song: ImageView = itemView.findViewById(R.id.img_song)
         val txt_songName: TextView = itemView.findViewById(R.id.txt_songName)
         val txt_singer: TextView = itemView.findViewById(R.id.txt_singer)
+        val txt_duration: TextView = itemView.findViewById(R.id.txt_duration)
         val txt_lyrics: TextView = itemView.findViewById(R.id.txt_lyrics)
     }
 
@@ -29,10 +31,11 @@ class RecyclerSongAdapter: RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder> 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.img_song.setImageResource(arrsongdis.get(position).songImage)
-        holder.txt_songName.setText(arrsongdis.get(position).songName)
-        holder.txt_singer.setText(arrsongdis.get(position).singerName)
-        if(arrsongdis.get(position).lyrics == true){
+        Picasso.get().load(arrsongdis[position].imgurl).into(holder.img_song)
+        holder.txt_songName.text = arrsongdis[position].name
+        holder.txt_singer.text = arrsongdis[position].singers
+        holder.txt_duration.text = arrsongdis[position].duration
+        if(arrsongdis.get(position).lyrics){
             holder.txt_lyrics.visibility = View.VISIBLE
         }
     }

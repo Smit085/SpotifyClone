@@ -2,6 +2,7 @@ package com.example.spotifyclone
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +12,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
 class RecyclerDailymixAdapter: RecyclerView.Adapter<RecyclerDailymixAdapter.ViewHolder> {
-
     private var context: Context
     private var arr_dailymix = ArrayList<DailymixCardModel>()
 
@@ -33,25 +34,30 @@ class RecyclerDailymixAdapter: RecyclerView.Adapter<RecyclerDailymixAdapter.View
         return ViewHolder(view)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if(arr_dailymix.get(position).name.isNotBlank()){
+        if(arr_dailymix.get(position).description.isNotBlank()){
             holder.txt_name.text = arr_dailymix[position].description
         }
         if (arr_dailymix.get(position).imgurl.isNotBlank()) {
             Picasso.get().load(arr_dailymix[position].imgurl).into(holder.img_dailymix)
         }
 
+        holder.row_dailymix.setOnClickListener {
 
-        holder.row_dailymix.setOnClickListener { view ->
-//            val intent = Intent(context, PlaylistFragment::class.java)
+//            Toast.makeText(context, "", Toast.LENGTH_LONG).show();
 
-            Log.i("DESCRIPTION:",arr_dailymix[position].description)
-//            Toast.makeText(context, "ID: "+arr_dailymix[position].id, Toast.LENGTH_LONG).show();
-//            Toast.makeText(context, "DESCRIPTION: "+arr_dailymix[position].description, Toast.LENGTH_LONG).show();
+            val playlistFragment = PlaylistFragment()
+            val bundle = Bundle()
+            bundle.putString("id", arr_dailymix[position].id)
+            bundle.putString("description", arr_dailymix[position].description)
+            bundle.putString("imgurl", arr_dailymix[position].imgurl)
+            playlistFragment.arguments = bundle
 
-            val id = arr_dailymix[position].id
-            val description = arr_dailymix[position].description
+            val fragmentManager = (context as MainActivity).supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.frag_container, playlistFragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
-
     }
     override fun getItemCount(): Int {
         return arr_dailymix.size

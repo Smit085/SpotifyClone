@@ -7,10 +7,10 @@ import retrofit2.http.Query
 
 interface ApiInterface {
 
-    @Headers("X-RapidAPI-Key: d8371881dfmshf3baf03e7dfa1a4p10c85djsn956d3724b081",
+    @Headers("X-RapidAPI-Key: 702fbf3640mshdce5f4f0c56be7fp1b5c7ejsn0de525605c39",
             "X-RapidAPI-Host: spotify23.p.rapidapi.com")
 
-    @GET("playlist/")
-    fun getData(@Query("id") query: String): Call<PlaylistInfo>
+    @GET("playlist_tracks/")
+    fun getData(@Query("id") query: String,@Query("offset") offset: Int,@Query("limit") limit: Int): Call<PlaylistInfo>
 
 }

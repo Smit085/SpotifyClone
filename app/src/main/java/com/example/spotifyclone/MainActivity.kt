@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         }
 
         binding.btnSearch.setOnClickListener{
-            loadFragment(SearchFragment(),1)
+            loadFragment(PlaylistFragment(),1)
             change_btnState(binding.btnSearch,R.drawable.icon_search_filled)
             binding.btnSearch.startAnimation(scaleAnimation)
         }
