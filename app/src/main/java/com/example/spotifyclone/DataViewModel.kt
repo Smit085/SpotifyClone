@@ -1,5 +1,6 @@
 package com.example.spotifyclone
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class DataViewModel : ViewModel() {
@@ -15,4 +16,6 @@ class DataViewModel : ViewModel() {
     var arr_jbi = ArrayList<DailymixCardModel>()
 
     var arrsongdis = ArrayList<SongCardModel>()
+    val selectedSongName = MutableLiveData<String>()
+
 }

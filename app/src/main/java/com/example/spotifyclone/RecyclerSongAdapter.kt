@@ -1,22 +1,26 @@
 package com.example.spotifyclone
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class RecyclerSongAdapter: RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder> {
+class RecyclerSongAdapter(
+    private val context: Context,
+    private val arrsongdis: ArrayList<SongCardModel>
+) : RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder>() {
+    var itemClickListener: ItemClickListener? = null
 
-    private var context: Context
-    private var arrsongdis = ArrayList<SongCardModel>()
-    constructor(context: Context, arrsongdis: ArrayList<SongCardModel>){
-        this.context = context
-        this.arrsongdis = arrsongdis
+    interface ItemClickListener {
+        fun onItemClicked(imgurl: String,songname: String,singers: String)
     }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val img_song: ImageView = itemView.findViewById(R.id.img_song)
         val txt_songName: TextView = itemView.findViewById(R.id.txt_songName)
@@ -35,11 +39,15 @@ class RecyclerSongAdapter: RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder> 
         holder.txt_songName.text = arrsongdis[position].name
         holder.txt_singer.text = arrsongdis[position].singers
         holder.txt_duration.text = arrsongdis[position].duration
-        if(arrsongdis.get(position).lyrics){
+        if (arrsongdis[position].lyrics) {
             holder.txt_lyrics.visibility = View.VISIBLE
         }
-    }
 
+        holder.itemView.setOnClickListener {
+            Log.i("Hello",arrsongdis[position].name)
+            itemClickListener?.onItemClicked(arrsongdis[position].imgurl,arrsongdis[position].name,arrsongdis[position].singers)
+        }
+    }
 
     override fun getItemCount(): Int {
         return arrsongdis.size

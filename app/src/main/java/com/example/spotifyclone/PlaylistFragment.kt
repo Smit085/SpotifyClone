@@ -1,13 +1,11 @@
 package com.example.spotifyclone
 
 import android.animation.ValueAnimator
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,12 +18,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class PlaylistFragment : Fragment() {
+class PlaylistFragment : Fragment(),RecyclerSongAdapter.ItemClickListener{
     private lateinit var binding: FragmentPlaylistBinding
     private lateinit var viewModel: DataViewModel
     var fav_state = 0
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -140,9 +137,14 @@ class PlaylistFragment : Fragment() {
 
     private fun setupRecyclerViews() {
         val adapter = RecyclerSongAdapter(requireContext(), viewModel.arrsongdis)
-
+        adapter.itemClickListener = this
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
+    }
+
+
+    override fun onItemClicked(imgurl: String,songname: String,singers: String) {
+        (requireActivity() as MainActivity).updateTextViewText(imgurl,songname,singers)
     }
 
 }

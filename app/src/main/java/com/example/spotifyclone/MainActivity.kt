@@ -1,21 +1,21 @@
 package com.example.spotifyclone
 
-import android.app.Dialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.example.spotifyclone.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButton
+import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedListener {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: DataViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, true)
@@ -54,6 +54,11 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         binding.cardMusiccontrol.setOnClickListener {
             val bottomSheetFragment = MusicActivity()
             bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
+        }
+        viewModel = ViewModelProvider(this).get(DataViewModel::class.java)
+        // Observe the LiveData for selected song name
+        viewModel.selectedSongName.observe(this) { songName ->
+            binding.txtSongName.text = songName
         }
     }
     private fun loadFragment(fragment: Fragment,flag: Int){
@@ -111,6 +116,14 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
                 change_btnState(binding.btnPremium, R.drawable.icon_premium_filled)
             }
         }
+    }
+    fun updateTextViewText(imgurl: String, songname: String, singers: String) {
+        // Update your TextView in MainActivity here
+        Picasso.get().load(imgurl).into(binding.imgSong)
+        binding.txtSongName.text = songname
+        binding.txtSinger.text = singers
+        binding.txtSongName.isSelected = true;
+        binding.txtSinger.isSelected = true;
     }
 
 }
