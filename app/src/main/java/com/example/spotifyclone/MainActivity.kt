@@ -1,8 +1,10 @@
 package com.example.spotifyclone
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
@@ -50,7 +52,8 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         }
 
         binding.cardMusiccontrol.setOnClickListener {
-            startActivity(Intent(this, MusicActivity::class.java))
+            val bottomSheetFragment = MusicActivity()
+            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
         }
     }
     private fun loadFragment(fragment: Fragment,flag: Int){
