@@ -85,7 +85,7 @@
     - Found a freemium api for music and it metadata on rapidapi.
     - Successfully made first call to the api.
     - Started working with the song metadata and displayed it in the playlist fragment.
-- **24/20**
+- **24/10**
   - Working with main activity:
     - Completed the UI for mini music controller.
     - Added real time playing song details.
@@ -94,4 +94,7 @@
     - Added transition for opening and closing.
   - Started Working with sond player:
     - Tried passing current song info through bundel,viewmodel to the player but didn't succeed.
-- ** 
+- **25/10**
+  - Working with sond player:
+    - Tried passing current song info through object and it worked well.
+    - Succesfully played first song fromt the playlist.
