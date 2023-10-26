@@ -92,5 +92,6 @@
   - Working with BottomSheet Dialog activity:
     - Completed the UI.
     - Added transition for opening and closing.
-  - Working with sond player:
-    - 
+  - Started Working with sond player:
+    - Tried passing current song info through bundel,viewmodel to the player but didn't succeed.
+- ** 
