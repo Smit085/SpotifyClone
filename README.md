@@ -98,3 +98,5 @@
   - Working with sond player:
     - Tried passing current song info through object and it worked well.
     - Succesfully played first song fromt the playlist.
+
+
