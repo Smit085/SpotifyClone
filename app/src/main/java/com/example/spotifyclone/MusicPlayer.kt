@@ -30,6 +30,7 @@ class MusicPlayer : BottomSheetDialogFragment()  {
     private var playstate = false
     private val timer = Timer()
     private var songurl = ""
+    var fav_state = false
 
     object DataRepository {
         var songName: String? = null
@@ -72,7 +73,6 @@ class MusicPlayer : BottomSheetDialogFragment()  {
         }
 
 
-
         binding.btnPlaypause.setOnClickListener {
             if (playstate) {
                 mp.pause()
@@ -95,6 +95,16 @@ class MusicPlayer : BottomSheetDialogFragment()  {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
+
+        binding.btnFav.setOnClickListener {
+            if (!fav_state) {
+                binding.btnFav.setImageResource(R.drawable.icon_favourite_red)
+                fav_state = true
+            } else {
+                binding.btnFav.setImageResource(R.drawable.icon_favourite)
+                fav_state = false
+            }
+        }
 
         return binding.root
     }

@@ -141,11 +141,13 @@
                 </LinearLayout>
 
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/transparent"
-                    android:src="@drawable/icon_favourite_32" />
+                    android:id="@+id/btn_fav"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_favourite"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="center_vertical|end"
+                    android:background="@color/transparent"/>
 
             </LinearLayout>
 
@@ -235,12 +237,12 @@
                         android:scaleType="fitCenter"
                         android:src="@drawable/baseline_skip_next_12"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/btn_fav"
+                        app:layout_constraintEnd_toStartOf="@id/btn_loop"
                         app:layout_constraintStart_toEndOf="@id/btn_playpause"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageButton
-                        android:id="@+id/btn_fav"
+                        android:id="@+id/btn_loop"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:backgroundTint="#00000000"

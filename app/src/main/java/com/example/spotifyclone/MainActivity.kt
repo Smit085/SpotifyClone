@@ -12,16 +12,21 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.spotifyclone.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButton
 import com.squareup.picasso.Picasso
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: DataViewModel
+    var fav_state = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, true)
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+
+
 
         loadFragment(HomeFragment(),0)
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation)
@@ -59,6 +64,17 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         viewModel.selectedSongName.observe(this) { songName ->
             binding.txtSongName.text = songName
         }
+
+        binding.btnFav.setOnClickListener {
+            if (!fav_state) {
+                binding.btnFav.setImageResource(R.drawable.icon_favourite_red)
+                fav_state = true
+            } else {
+                binding.btnFav.setImageResource(R.drawable.icon_favourite)
+                fav_state = false
+            }
+        }
+
     }
     private fun loadFragment(fragment: Fragment,flag: Int){
         val fm: FragmentManager = supportFragmentManager;
@@ -123,6 +139,5 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         binding.txtSongName.isSelected = true;
         binding.txtSinger.isSelected = true;
     }
-
 
 }

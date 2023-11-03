@@ -20,6 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.Calendar
 
 
 class HomeFragment : Fragment(){
@@ -45,6 +46,9 @@ class HomeFragment : Fragment(){
         else {
             setupRecyclerViews()
         }
+
+        val greeting = getGreeting()
+        binding.txtGreet.text = greeting
         return binding.root
     }
     private fun fetchDataFromFirestore(collectionPath: String) {
@@ -103,9 +107,9 @@ class HomeFragment : Fragment(){
         viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_likedsongs, "Liked Songs"))
         viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_playlistbanner, "Latest Love Tunes"))
         viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "2016-2018 Hindi Songs"))
-        viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "Hot Hits Hindi"))
-        viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "I-Pop Superhits"))
-        viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_popularartist1, "This Is Pritam"))
+        viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_indiasbest, "Hot Hits Hindi"))
+        viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_popularartist1, "I-Pop Superhits"))
+        viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_artists1, "This Is Pritam"))
         viewModel.arr_recents.add(RecentsCardModel(R.drawable.img_dailymix2, "Arjit Singh Lofi Song❤️"))
 
         val adapter_recents = RecyclerRecentsAdapter(requireContext(), viewModel.arr_recents)
@@ -125,18 +129,22 @@ class HomeFragment : Fragment(){
         binding.recyclerViewIndiasbest.adapter = adapter_indiasbest
 
 
-        viewModel.arr_jbi.clear()
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "Lofi Songs (Bollywood) \uD83D\uDE0C\uD83D\uDC9C"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "Liked Songs"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "Latest Love Tunes"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "2016-2018 Hindi Songs"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "Hot Hits Hindi"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "I-Pop Superhits"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "This Is Pritam"))
-        viewModel.arr_jbi.add(DailymixCardModel("","","", "Arjit Singh Lofi Song❤️"))
+//        viewModel.arr_jbi.clear()
+//        viewModel.arr_jbi.add(DailymixCardModel("","","", "Lofi Songs (Bollywood) \uD83D\uDE0C\uD83D\uDC9C"))
+//        viewModel.arr_jbi.add(DailymixCardModel("","https://misc.scdn.co/liked-songs/liked-songs-640.png","", "Liked Songs"))
+//
+//        val adapter_jbi = RecyclerDailymixAdapter(requireContext(), viewModel.arr_jbi)
+//        binding.recyclerViewJbi.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//        binding.recyclerViewJbi.adapter = adapter_jbi
+    }
+    fun getGreeting(): String {
+        val calendar = Calendar.getInstance()
+        val hourOfDay = calendar.get(Calendar.HOUR_OF_DAY)
 
-        val adapter_jbi = RecyclerDailymixAdapter(requireContext(), viewModel.arr_jbi)
-        binding.recyclerViewJbi.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.recyclerViewJbi.adapter = adapter_jbi
+        return when (hourOfDay) {
+            in 0..11 -> "Good morning!"
+            in 12..17 -> "Good afternoon!"
+            else -> "Good evening!"
+        }
     }
 }
