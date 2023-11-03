@@ -17,5 +17,6 @@ class DataViewModel : ViewModel() {
 
     var arrsongdis = ArrayList<SongCardModel>()
     val selectedSongName = MutableLiveData<String>()
-
+    val selectedSongurl = MutableLiveData<String>()
+    var selectedsong = 0
 }

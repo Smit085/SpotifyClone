@@ -5,19 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import com.example.spotifyclone.databinding.FragmentSearchBinding
+import com.example.spotifyclone.databinding.FragmentSearchbarBinding
 
 class SearchbarFragment : Fragment() {
+    private lateinit var binding: FragmentSearchbarBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentSearchbarBinding.inflate(inflater, container, false)
+        binding.btnBack.setOnClickListener{
+
+            val fragmentManager = (context as MainActivity).supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.frag_container, SearchFragment())
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_searchbar, container, false)
+        return binding.root
     }
 
 }

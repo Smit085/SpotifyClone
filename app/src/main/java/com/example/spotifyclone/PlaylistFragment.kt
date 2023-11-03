@@ -18,7 +18,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class PlaylistFragment : Fragment(),RecyclerSongAdapter.ItemClickListener{
+class PlaylistFragment : Fragment(), RecyclerSongAdapter.ItemClickListener {
     private lateinit var binding: FragmentPlaylistBinding
     private lateinit var viewModel: DataViewModel
     var fav_state = 0
@@ -86,26 +86,26 @@ class PlaylistFragment : Fragment(),RecyclerSongAdapter.ItemClickListener{
         }
 
         binding.btnFav.setOnClickListener {
-            if(fav_state == 0) {
+            if (fav_state == 0) {
                 binding.btnFav.setImageResource(R.drawable.icon_favourite_red)
                 fav_state = 1
-            }
-            else{
+            } else {
                 binding.btnFav.setImageResource(R.drawable.icon_favourite)
                 fav_state = 0
             }
         }
+
         return binding.root
     }
 
-    private fun fetchDataFromApi(id: String){
+    private fun fetchDataFromApi(id: String) {
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl("https://spotify23.p.rapidapi.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiInterface::class.java)
 
-        val  retofitData = retrofitBuilder.getData(id,0,15)
+        val retofitData = retrofitBuilder.getData(id, 0, 15)
 
         retofitData.enqueue(object : Callback<PlaylistInfo?> {
             override fun onResponse(call: Call<PlaylistInfo?>, response: Response<PlaylistInfo?>) {
@@ -115,13 +115,16 @@ class PlaylistFragment : Fragment(),RecyclerSongAdapter.ItemClickListener{
                     for (item in items) {
                         val min = String.format("%02d", (item.track.duration_ms / 1000 / 60))
                         val sec = String.format("%02d", (item.track.duration_ms / 1000 % 60))
-                        viewModel.arrsongdis.add(SongCardModel(
-                            item.track.album.images[2].url,
-                            item.track.name,
-                            item.track.artists.joinToString { it.name },
-                            "$min:$sec",
-                            false
-                        ))
+                        viewModel.arrsongdis.add(
+                            SongCardModel(
+                                item.track.album.images[0].url,
+                                item.track.name,
+                                item.track.artists.joinToString { it.name },
+                                "$min:$sec",
+                                item.track.preview_url,
+                                false
+                            )
+                        )
                     }
                     if (viewModel.arrsongdis.isNotEmpty()) {
                         setupRecyclerViews()
@@ -129,8 +132,9 @@ class PlaylistFragment : Fragment(),RecyclerSongAdapter.ItemClickListener{
                 }
                 Log.i("Onresponse", "Response: ${response.raw()}, Body: ${response.body()}")
             }
+
             override fun onFailure(call: Call<PlaylistInfo?>, t: Throwable) {
-                Log.i("onFailure","ERROR: "+t.message)
+                Log.i("onFailure", "ERROR: " + t.message)
             }
         })
     }
@@ -143,8 +147,20 @@ class PlaylistFragment : Fragment(),RecyclerSongAdapter.ItemClickListener{
     }
 
 
-    override fun onItemClicked(imgurl: String,songname: String,singers: String) {
-        (requireActivity() as MainActivity).updateTextViewText(imgurl,songname,singers)
-    }
+    override fun onItemClicked(songIndex: Int) {
+//        val musicPlayer = MusicPlayer()
+//        musicPlayer.updateplayer(viewModel.arrsongdis[songIndex].songurl,viewModel.arrsongdis[songIndex].imgurl, viewModel.arrsongdis[songIndex].name, viewModel.arrsongdis[songIndex].singers)
 
+//        val bundle = Bundle()
+//        bundle.putString("songname", viewModel.arrsongdis[songIndex].name)
+//        bundle.putBoolean("data_transferred", true)
+//        val bottomSheetDialog = MusicPlayer()
+//        bottomSheetDialog.arguments = bundle
+
+        MusicPlayer.DataRepository.songName = viewModel.arrsongdis[songIndex].name
+        MusicPlayer.DataRepository.songurl = viewModel.arrsongdis[songIndex].songurl
+        MusicPlayer.DataRepository.imgurl = viewModel.arrsongdis[songIndex].imgurl
+        MusicPlayer.DataRepository.singers = viewModel.arrsongdis[songIndex].singers
+        (requireActivity() as MainActivity).updateTextViewText(songIndex)
+    }
 }

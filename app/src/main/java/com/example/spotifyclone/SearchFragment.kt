@@ -5,11 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.spotifyclone.databinding.FragmentSearchBinding
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
@@ -28,6 +32,14 @@ class SearchFragment : Fragment() {
             fetchDataFromFirestore()
         } else {
             setupRecyclerViews()
+        }
+
+        binding.btnSearch.setOnClickListener {
+            val fragmentManager = (context as MainActivity).supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.frag_container, SearchbarFragment())
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
         return binding.root
     }

@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
@@ -16,9 +18,10 @@ class RecyclerSongAdapter(
     private val arrsongdis: ArrayList<SongCardModel>
 ) : RecyclerView.Adapter<RecyclerSongAdapter.ViewHolder>() {
     var itemClickListener: ItemClickListener? = null
+    private lateinit var viewModel: DataViewModel
 
     interface ItemClickListener {
-        fun onItemClicked(imgurl: String,songname: String,singers: String)
+        fun onItemClicked(songIndex: Int)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -45,7 +48,9 @@ class RecyclerSongAdapter(
 
         holder.itemView.setOnClickListener {
             Log.i("Hello",arrsongdis[position].name)
-            itemClickListener?.onItemClicked(arrsongdis[position].imgurl,arrsongdis[position].name,arrsongdis[position].singers)
+            itemClickListener?.onItemClicked(position)
+//            viewModel = ViewModelProvider(MusicPlayer()).get(DataViewModel::class.java)
+//            viewModel.selectedsong = position
         }
     }
 

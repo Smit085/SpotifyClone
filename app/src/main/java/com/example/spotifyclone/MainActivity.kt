@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         }
 
         binding.btnSearch.setOnClickListener{
-            loadFragment(PlaylistFragment(),1)
+            loadFragment(SearchFragment(),1)
             change_btnState(binding.btnSearch,R.drawable.icon_search_filled)
             binding.btnSearch.startAnimation(scaleAnimation)
         }
@@ -52,11 +52,10 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
         }
 
         binding.cardMusiccontrol.setOnClickListener {
-            val bottomSheetFragment = MusicActivity()
+            val bottomSheetFragment = MusicPlayer()
             bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
         }
         viewModel = ViewModelProvider(this).get(DataViewModel::class.java)
-        // Observe the LiveData for selected song name
         viewModel.selectedSongName.observe(this) { songName ->
             binding.txtSongName.text = songName
         }
@@ -117,13 +116,13 @@ class MainActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedList
             }
         }
     }
-    fun updateTextViewText(imgurl: String, songname: String, singers: String) {
-        // Update your TextView in MainActivity here
-        Picasso.get().load(imgurl).into(binding.imgSong)
-        binding.txtSongName.text = songname
-        binding.txtSinger.text = singers
+    fun updateTextViewText(songIndex: Int) {
+        Picasso.get().load(viewModel.arrsongdis[songIndex].imgurl).into(binding.imgSong)
+        binding.txtSongName.text = viewModel.arrsongdis[songIndex].name
+        binding.txtSinger.text = viewModel.arrsongdis[songIndex].singers
         binding.txtSongName.isSelected = true;
         binding.txtSinger.isSelected = true;
     }
+
 
 }
