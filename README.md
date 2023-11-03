@@ -79,9 +79,24 @@
     - Fetched their data into the fragment.
     - Tried data passing from one fragment to another but can't execute it.
 
-- **23/11**
+- **23/10**
   - Successfully executed data passing from one fragment to another using bundel passing.
   - Trying to work with Api again
     - Found a freemium api for music and it metadata on rapidapi.
     - Successfully made first call to the api.
     - Started working with the song metadata and displayed it in the playlist fragment.
+- **24/10**
+  - Working with main activity:
+    - Completed the UI for mini music controller.
+    - Added real time playing song details.
+  - Working with BottomSheet Dialog activity:
+    - Completed the UI.
+    - Added transition for opening and closing.
+  - Started Working with sond player:
+    - Tried passing current song info through bundel,viewmodel to the player but didn't succeed.
+- **25/10**
+  - Working with sond player:
+    - Tried passing current song info through object and it worked well.
+    - Succesfully played first song fromt the playlist.
+
+
