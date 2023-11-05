@@ -1,5 +1,5 @@
 # SpotifyClone
-## [Started maintaining the README.md file]
+## [Started maintaining the Dailylogs]
 
 - **29/09**
   - Working with the search fragment
