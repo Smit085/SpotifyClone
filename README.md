@@ -1,7 +1,5 @@
 # Spotify Clone
 
-![App Screenshot](screenshot.png)
-
 ## Introduction
 
 Welcome to the Spotify Clone, a music streaming application inspired by Spotify's latest app design. This application tries to duplicate each and every minor details of the actual app ,provided with seamless music listening experience, allowing users to explore, discover, and enjoy their favorite songs, artists, and playlists.
@@ -9,12 +7,16 @@ Welcome to the Spotify Clone, a music streaming application inspired by Spotify'
 ## Features
 
 - Discover a vast library of songs, albums, and artists.
-- Browse curated playlists based on my preferences.
+- Browse curated playlists based on my profile preferences.
 - Music controls like play, pause, skip, and shuffle songs.
-- Get detailed information about your favorite artists.
-- View their top tracks, albums, and related artists.
-- Quickly search for songs, albums, and artists.
-- Get instant search results as you type.
+
+## Visual Tour
+
+![Home Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/4b3e22de-8046-497d-83fc-0189ca8bc5a7)
+![Search Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/c7b0f822-c00b-4848-80cd-2f8fa718582e)
+![Premium Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/19f2fcfa-892e-4987-a6aa-fec239043027)
+![Playlist](https://github.com/Smit085/SpotifyClone/assets/139530390/3d5e8a8f-a879-4b0f-b2af-08d3b4a2f744)
+![Music Player](https://github.com/Smit085/SpotifyClone/assets/139530390/ea14749a-fef9-4a75-8027-aad095799676)
 
 ## Getting Started
 
@@ -26,14 +28,17 @@ Welcome to the Spotify Clone, a music streaming application inspired by Spotify'
 
 ## Technologies Used
 
-- Android (Kotlin)
-- RapidAPI for playlist information
-- Google Firebase for database
-- Picasso for image loading
-- RecyclerView for displaying lists
+- Android (Kotlin).
+- RapidAPI to fetch playlist information.
+- Google Firebase for database.
+- Picasso for image loading.
+
+## DailyLogs
+
+- Visit [Dailylog](https://github.com/Smit085/SpotifyClone/blob/master/DailyLogs.md) to get snnek peek to mu dailywork report and challenges which I faced dusing the development.
 
 ## Contact
 
-Feel free to contact us if you have any questions or suggestions:
-- Email: your.email@example.com
-- GitHub: [Your GitHub Profile](https://github.com/yourusername)
+Feel free to contact me if you have any questions or suggestions:
+- Email: smitapatel21@gnu.ac.in
+- GitHub: [Smit085](https://github.com/Smit085)
