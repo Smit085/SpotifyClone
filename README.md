@@ -12,12 +12,11 @@ Welcome to the Spotify Clone, a music streaming application inspired by Spotify'
 
 ## Visual Tour
 
-![Home Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/4b3e22de-8046-497d-83fc-0189ca8bc5a7){:width="200px"}
-
-![Search Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/c7b0f822-c00b-4848-80cd-2f8fa718582e).
-![Premium Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/19f2fcfa-892e-4987-a6aa-fec239043027).
-![Playlist](https://github.com/Smit085/SpotifyClone/assets/139530390/3d5e8a8f-a879-4b0f-b2af-08d3b4a2f744).
-![Music Player](https://github.com/Smit085/SpotifyClone/assets/139530390/ea14749a-fef9-4a75-8027-aad095799676).
+![Home Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/ee61382c-5fb1-4a21-8188-5a836ee30c7b).
+![Search Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/cbbaa4a0-0085-4146-b388-93a6caf7abea)
+![Premium Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/430d496d-78a2-45f8-9a91-9b0341a3026a).
+![Playlist](https://github.com/Smit085/SpotifyClone/assets/139530390/77428c33-efea-4f18-b424-d8c213dbd663).
+![Music Player](https://github.com/Smit085/SpotifyClone/assets/139530390/16037f53-5ae6-4d14-aed9-d527a737671a).
 
 ## Getting Started
 
