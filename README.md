@@ -12,7 +12,7 @@ Welcome to the Spotify Clone, a music streaming application inspired by Spotify'
 
 ## Visual Tour
 
-![Home Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/4b3e22de-8046-497d-83fc-0189ca8bc5a7).
+![Home Tab](<img src="[https://i.imgur.com/ZWnhY9T.png](https://github.com/Smit085/SpotifyClone/assets/139530390/4b3e22de-8046-497d-83fc-0189ca8bc5a7)" width=50% height=50%>).
 ![Search Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/c7b0f822-c00b-4848-80cd-2f8fa718582e).
 ![Premium Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/19f2fcfa-892e-4987-a6aa-fec239043027).
 ![Playlist](https://github.com/Smit085/SpotifyClone/assets/139530390/3d5e8a8f-a879-4b0f-b2af-08d3b4a2f744).
@@ -35,7 +35,7 @@ Welcome to the Spotify Clone, a music streaming application inspired by Spotify'
 
 ## DailyLogs
 
-- Visit [Dailylog](https://github.com/Smit085/SpotifyClone/blob/master/DailyLogs.md) to get into the sneek peek to my dailywork report and challenges which I faced during the development.
+- Visit [Daily Log](https://github.com/Smit085/SpotifyClone/blob/master/DailyLogs.md) to get a sneak peek to my dailywork report and challenges which I faced during the development.
 
 ## Contact
 
