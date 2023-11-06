@@ -12,11 +12,8 @@ Welcome to the Spotify Clone, a music streaming application inspired by Spotify'
 
 ## Visual Tour
 
-![Home Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/ee61382c-5fb1-4a21-8188-5a836ee30c7b).
-![Search Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/cbbaa4a0-0085-4146-b388-93a6caf7abea)
-![Premium Tab](https://github.com/Smit085/SpotifyClone/assets/139530390/430d496d-78a2-45f8-9a91-9b0341a3026a).
-![Playlist](https://github.com/Smit085/SpotifyClone/assets/139530390/77428c33-efea-4f18-b424-d8c213dbd663).
-![Music Player](https://github.com/Smit085/SpotifyClone/assets/139530390/16037f53-5ae6-4d14-aed9-d527a737671a).
+![ScreenShots](https://github.com/Smit085/SpotifyClone/assets/139530390/56e98dd7-58bc-4fc4-89d0-69335d3a1472)
+
 
 ## Getting Started
 
